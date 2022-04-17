@@ -1,0 +1,909 @@
+{
+  "@context" : {
+    "Dr._Mitchell" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Mitchell"
+    },
+    "Sophie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sophie"
+    },
+    "Mr._Douglas" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Douglas"
+    },
+    "Kyle" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kyle"
+    },
+    "Katie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Katie"
+    },
+    "Larry" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Larry"
+    },
+    "The_Croupier" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Croupier"
+    },
+    "Ralph_Lauren" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ralph_Lauren"
+    },
+    "The_Horrible_Woman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Horrible_Woman"
+    },
+    "hasGrandfather" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasGrandfather",
+      "@type" : "@id"
+    },
+    "SeasonOne" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonOne"
+    },
+    "Isabella_Rosellini" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Isabella_Rosellini"
+    },
+    "Mr._Kaplan_Jr." : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Kaplan_Jr."
+    },
+    "Tim" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tim"
+    },
+    "Julie_Graff" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Julie_Graff"
+    },
+    "isDaughterOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isDaughterOf",
+      "@type" : "@id"
+    },
+    "Mr._Adelman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Adelman"
+    },
+    "Relationships" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Relationships"
+    },
+    "Frank_Buffay_Jr." : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Jr."
+    },
+    "The_Judge" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Judge"
+    },
+    "Joanna" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joanna"
+    },
+    "Theodore_Hannigan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Theodore_Hannigan"
+    },
+    "Roger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Roger"
+    },
+    "mainJob" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#mainJob",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Clifford_Burnett" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Clifford_Burnett"
+    },
+    "Trudie_Styler" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Trudie_Styler"
+    },
+    "Gary" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gary"
+    },
+    "Rick" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Rick"
+    },
+    "Wendy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Wendy"
+    },
+    "Jim" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jim"
+    },
+    "Fun_Bobby" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Fun_Bobby"
+    },
+    "Alessandro" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Alessandro"
+    },
+    "Mike_Hannigan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mike_Hannigan"
+    },
+    "Kristen_Lang" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kristen_Lang"
+    },
+    "Grandma_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Grandma_Tribbiani"
+    },
+    "Stu" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Stu"
+    },
+    "Will_Colbert" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Will_Colbert"
+    },
+    "Jasmine" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jasmine"
+    },
+    "The_Teacher" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Teacher"
+    },
+    "Russell" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Russell"
+    },
+    "Tina_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tina_Tribbiani"
+    },
+    "Nina" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Nina"
+    },
+    "Ugly_Naked_Guy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ugly_Naked_Guy"
+    },
+    "Dina_Lockhart" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dina_Lockhart"
+    },
+    "hasGrandmother" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasGrandmother",
+      "@type" : "@id"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "Chandler_Bing" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Chandler_Bing"
+    },
+    "Fran_Devanow" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Fran_Devanow"
+    },
+    "isGrandfatherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isGrandfatherOf",
+      "@type" : "@id"
+    },
+    "Paul_Stevens" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Paul_Stevens"
+    },
+    "Michael" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Michael"
+    },
+    "hasMainRoleIn" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasMainRoleIn",
+      "@type" : "@id"
+    },
+    "Jean-Claude_Van_Damme" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jean-Claude_Van_Damme"
+    },
+    "Mr._Waltham" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Waltham"
+    },
+    "isFamilyOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isFamilyOf",
+      "@type" : "@id"
+    },
+    "Ellen" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ellen"
+    },
+    "Erica" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Erica"
+    },
+    "hasFather" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasFather",
+      "@type" : "@id"
+    },
+    "Sandy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sandy"
+    },
+    "Characters" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Characters"
+    },
+    "The_Chick" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Chick"
+    },
+    "The_Ticket_Agent" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Ticket_Agent"
+    },
+    "Ginger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ginger"
+    },
+    "Paul_the_Wine_Guy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Paul_the_Wine_Guy"
+    },
+    "Rhonda" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Rhonda"
+    },
+    "Chip_Matthews" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Chip_Matthews"
+    },
+    "Bitsy_Hannigan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Bitsy_Hannigan"
+    },
+    "Ned_Morse" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ned_Morse"
+    },
+    "Lydia" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Lydia"
+    },
+    "Marshall_Townend" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Marshall_Townend"
+    },
+    "Hillary" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Hillary"
+    },
+    "Leslie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Leslie"
+    },
+    "Ronni" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ronni"
+    },
+    "Danny" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Danny"
+    },
+    "Kathy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kathy"
+    },
+    "Joey_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani"
+    },
+    "Jill_Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jill_Green"
+    },
+    "Emily_Waltham" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Emily_Waltham"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "The_Elderly_Woman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Elderly_Woman"
+    },
+    "Susie_Moss" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Susie_Moss"
+    },
+    "Steve" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Steve"
+    },
+    "hasFamily" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasFamily",
+      "@type" : "@id"
+    },
+    "Patrick" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Patrick"
+    },
+    "The_Zoo_Janitor" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Zoo_Janitor"
+    },
+    "hasRecurringRoleIn" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasRecurringRoleIn",
+      "@type" : "@id"
+    },
+    "Gavin_Mitchell" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gavin_Mitchell"
+    },
+    "Caitlin" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Caitlin"
+    },
+    "hasBirthMother" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasBirthMother",
+      "@type" : "@id"
+    },
+    "Vince" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Vince"
+    },
+    "Kiki" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kiki"
+    },
+    "Andrea_Waltham" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Andrea_Waltham"
+    },
+    "Brenda" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Brenda"
+    },
+    "isBrotherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isBrotherOf",
+      "@type" : "@id"
+    },
+    "Kim_Clozzi" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kim_Clozzi"
+    },
+    "Stephanie_Schiffer" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Stephanie_Schiffer"
+    },
+    "Ross_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ross_Geller"
+    },
+    "Richard_Burke" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Richard_Burke"
+    },
+    "Julie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Julie"
+    },
+    "isFatherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isFatherOf",
+      "@type" : "@id"
+    },
+    "Marcel" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Marcel"
+    },
+    "The_Nurse" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Nurse"
+    },
+    "Jason" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jason"
+    },
+    "Sid" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sid"
+    },
+    "Lizzy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Lizzy"
+    },
+    "Dr._Leonard_Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Leonard_Green"
+    },
+    "Phoebe_Abbot_Sr." : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Abbot_Sr."
+    },
+    "Moderate_Relationships" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Moderate_Relationships"
+    },
+    "Nurse_Kitty" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Nurse_Kitty"
+    },
+    "hasGuestRole" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasGuestRole",
+      "@type" : "@id"
+    },
+    "Kash" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kash"
+    },
+    "Precious" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Precious"
+    },
+    "Ursula_Buffay" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ursula_Buffay"
+    },
+    "Leonard_Hayes" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Leonard_Hayes"
+    },
+    "The_Gentleman_On_The_Plane" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Gentleman_On_The_Plane"
+    },
+    "Dina_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dina_Tribbiani"
+    },
+    "Stephen_Waltham" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Stephen_Waltham"
+    },
+    "Aurora" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Aurora"
+    },
+    "The_Woman_On_The_Train" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Woman_On_The_Train"
+    },
+    "Don" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Don"
+    },
+    "hasYearOfBirth" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasYearOfBirth",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Dr._Mike_Horton" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Mike_Horton"
+    },
+    "Nora_Tyler_Bing" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Nora_Tyler_Bing"
+    },
+    "Richard_Crosby" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Richard_Crosby"
+    },
+    "Dr._Ledbetter" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Ledbetter"
+    },
+    "Carol_Willick" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Carol_Willick"
+    },
+    "The_Housekeeper" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Housekeeper"
+    },
+    "The_Triplets" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Triplets"
+    },
+    "Gina_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gina_Tribbiani"
+    },
+    "Hope_Brady" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Hope_Brady"
+    },
+    "Barry_Farber" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Barry_Farber"
+    },
+    "Amanda_Buffamonteezi" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Amanda_Buffamonteezi"
+    },
+    "hasMother" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasMother",
+      "@type" : "@id"
+    },
+    "Mr._Treeger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Treeger"
+    },
+    "Earl" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Earl"
+    },
+    "Estelle_Leonard" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Estelle_Leonard"
+    },
+    "Fake_Monica" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Fake_Monica"
+    },
+    "SeasonThree" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonThree"
+    },
+    "Lowell_The_Mugger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Lowell_The_Mugger"
+    },
+    "Krista" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Krista"
+    },
+    "Helena_Handbasket" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Helena_Handbasket"
+    },
+    "Ms._McKenna" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ms._McKenna"
+    },
+    "Verónica_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Verónica_Tribbiani"
+    },
+    "Dr._Rosen" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Rosen"
+    },
+    "Molly" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Molly"
+    },
+    "Wayne" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Wayne"
+    },
+    "The_Stripper" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Stripper"
+    },
+    "Steven_Fishman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Steven_Fishman"
+    },
+    "Dana" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dana"
+    },
+    "Jen" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jen"
+    },
+    "Chloe" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Chloe"
+    },
+    "Erika" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Erika"
+    },
+    "SeasonFour" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonFour"
+    },
+    "Malcolm" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Malcolm"
+    },
+    "Eldad" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Eldad"
+    },
+    "hasBrother" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasBrother",
+      "@type" : "@id"
+    },
+    "Dr._Miller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Miller"
+    },
+    "Susan_Bunch" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Susan_Bunch"
+    },
+    "SeasonNine" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonNine"
+    },
+    "Charlie_Wheeler" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Charlie_Wheeler"
+    },
+    "Jack_Bing" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jack_Bing"
+    },
+    "Missy_Goldberg" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Missy_Goldberg"
+    },
+    "SeasonTen" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonTen"
+    },
+    "Mackenzie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mackenzie"
+    },
+    "Few_Relationships" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Few_Relationships"
+    },
+    "Amy_Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Amy_Green"
+    },
+    "hasSister" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasSister",
+      "@type" : "@id"
+    },
+    "Mr._Rastatter" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Rastatter"
+    },
+    "Gloria_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gloria_Tribbiani"
+    },
+    "Mona" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mona"
+    },
+    "hasAppear" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasAppear",
+      "@type" : "@id"
+    },
+    "Todd" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Todd"
+    },
+    "SeasonSix" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonSix"
+    },
+    "Nancy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Nancy"
+    },
+    "Eddie_Menuek" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Eddie_Menuek"
+    },
+    "Jessica_Ashley" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jessica_Ashley"
+    },
+    "Eric" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Eric"
+    },
+    "Jill_Goodacre" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jill_Goodacre"
+    },
+    "Zack" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Zack"
+    },
+    "Secondaries" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Secondaries"
+    },
+    "SeasonSeven" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonSeven"
+    },
+    "Sarah_Ferguson" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sarah_Ferguson"
+    },
+    "Dan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dan"
+    },
+    "Judy_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Judy_Geller"
+    },
+    "Friends" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Friends"
+    },
+    "Tag_Jones" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tag_Jones"
+    },
+    "Donny_Osmond" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Donny_Osmond"
+    },
+    "Jack_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jack_Geller"
+    },
+    "Dr._Harad" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Harad"
+    },
+    "Alan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Alan"
+    },
+    "SeasonFive" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonFive"
+    },
+    "Terry" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Terry"
+    },
+    "Marjorie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Marjorie"
+    },
+    "Parker" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Parker"
+    },
+    "hasEpisodesNumber" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasEpisodesNumber",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Mark_Robinson" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mark_Robinson"
+    },
+    "isBirthMotherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isBirthMotherOf",
+      "@type" : "@id"
+    },
+    "Alice_Knight_Buffay" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Alice_Knight_Buffay"
+    },
+    "Benjamin_Hobart" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Benjamin_Hobart"
+    },
+    "Pete_Becker" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Pete_Becker"
+    },
+    "s_Doctor" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joey's_Doctor"
+    },
+    "Maria_Teresa_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Maria_Teresa_Tribbiani"
+    },
+    "isGrandmotherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isGrandmotherOf",
+      "@type" : "@id"
+    },
+    "Dr._Franzblau" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Franzblau"
+    },
+    "Phoebe_Buffay" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Buffay"
+    },
+    "Lauren" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Lauren"
+    },
+    "Sebastian" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sebastian"
+    },
+    "hasAppearIn" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasAppearIn",
+      "@type" : "@id"
+    },
+    "Seasons" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Seasons"
+    },
+    "Isaac" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Isaac"
+    },
+    "Rob_Donnen" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Rob_Donnen"
+    },
+    "Tomas" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tomas"
+    },
+    "Mindy_Hunter" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mindy_Hunter"
+    },
+    "Gary_Collins" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gary_Collins"
+    },
+    "Elizabeth_Stevens" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Elizabeth_Stevens"
+    },
+    "Janice" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Janice"
+    },
+    "Randall" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Randall"
+    },
+    "Frank_Buffay_Sr." : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Sr."
+    },
+    "Janine_Lecroix" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Janine_Lecroix"
+    },
+    "Dave" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dave"
+    },
+    "Gunther" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Gunther"
+    },
+    "isMotherOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isMotherOf",
+      "@type" : "@id"
+    },
+    "María_Ángela_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#María_Ángela_Tribbiani"
+    },
+    "Paolo" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Paolo"
+    },
+    "Ryan" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ryan"
+    },
+    "Margha" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Margha"
+    },
+    "The_Duck" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Duck"
+    },
+    "The_Waiter" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Waiter"
+    },
+    "hasNumberOfRelationShips" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasNumberOfRelationShips",
+      "@type" : "http://www.w3.org/2001/XMLSchema#positiveInteger"
+    },
+    "Mr._Zelner" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Zelner"
+    },
+    "Annabel" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Annabel"
+    },
+    "SeasonTwo" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonTwo"
+    },
+    "Joey_Tribbiani_Sr." : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani_Sr."
+    },
+    "isSonOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isSonOf",
+      "@type" : "@id"
+    },
+    "Rachel_Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Rachel_Green"
+    },
+    "Felicity" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Felicity"
+    },
+    "Joshua_Burgin" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joshua_Burgin"
+    },
+    "Elizabeth_Hornswoggle" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Elizabeth_Hornswoggle"
+    },
+    "Cheryl" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Cheryl"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "hasGuestRoleIn" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasGuestRoleIn",
+      "@type" : "@id"
+    },
+    "Cecilia_Monroe" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Cecilia_Monroe"
+    },
+    "SeasonEight" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonEight"
+    },
+    "Mr._Franklin" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Franklin"
+    },
+    "Charlton_Heston" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Charlton_Heston"
+    },
+    "The_Script_Messenger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Script_Messenger"
+    },
+    "Erica_Bing" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Erica_Bing"
+    },
+    "Amanda" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Amanda"
+    },
+    "The_Zookeeper" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Zookeeper"
+    },
+    "Sandra_Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Sandra_Green"
+    },
+    "hasRecurringRole" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasRecurringRole",
+      "@type" : "@id"
+    },
+    "The_Baby_Sniffer" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Baby_Sniffer"
+    },
+    "The_Customer" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Customer"
+    },
+    "hasSon" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasSon",
+      "@type" : "@id"
+    },
+    "Joanne" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Joanne"
+    },
+    "Dr._Oberman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Oberman"
+    },
+    "Melissa_Warburton" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Melissa_Warburton"
+    },
+    "Ben_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Ben_Geller"
+    },
+    "Bonnie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Bonnie"
+    },
+    "Erin" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Erin"
+    },
+    "hasMainRole" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasMainRole",
+      "@type" : "@id"
+    },
+    "Emma_Geller-Green" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Emma_Geller-Green"
+    },
+    "Jamie_Buchman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jamie_Buchman"
+    },
+    "Encyclopedia_Salesman" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Encyclopedia_Salesman"
+    },
+    "Frances" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Frances"
+    },
+    "Rick_The_Hitchhiker" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Rick_The_Hitchhiker"
+    },
+    "Jake" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jake"
+    },
+    "Doug" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Doug"
+    },
+    "Monica_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Monica_Geller"
+    },
+    "Dr._Long" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Long"
+    },
+    "Many_Relationships" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Many_Relationships"
+    },
+    "Katie_Flirty_Sales_Assistant" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Katie_Flirty_Sales_Assistant"
+    },
+    "The_Jeweller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#The_Jeweller"
+    },
+    "isSisterOf" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#isSisterOf",
+      "@type" : "@id"
+    },
+    "Jade" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jade"
+    },
+    "Tim_Burke" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tim_Burke"
+    },
+    "Kate_Miller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Kate_Miller"
+    },
+    "Tommy" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Tommy"
+    },
+    "Mr._Heckles" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Heckles"
+    },
+    "Marsha" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Marsha"
+    },
+    "Melanie" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Melanie"
+    },
+    "David" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#David"
+    },
+    "hasDaughter" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#hasDaughter",
+      "@type" : "@id"
+    },
+    "Laura" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Laura"
+    },
+    "Cassie_Geller" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Cassie_Geller"
+    },
+    "Principals" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Principals"
+    },
+    "Dr._Roger" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Roger"
+    },
+    "Cookie_Tribbiani" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Cookie_Tribbiani"
+    },
+    "Carl" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Carl"
+    },
+    "Jack" : {
+      "@id" : "http://www.uoc.edu/roberto/ontologies/friends.owl#Jack"
+    }
+  }
+}
