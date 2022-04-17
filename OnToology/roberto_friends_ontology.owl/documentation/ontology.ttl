@@ -1,0 +1,4070 @@
+@prefix : <http://www.uoc.edu/roberto/ontologies/friends.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.uoc.edu/roberto/ontologies/friends.owl#> .
+
+<http://www.uoc.edu/roberto/ontologies/friends.owl> rdf:type owl:Ontology ;
+                                                     rdfs:comment """An ontology of Friends tv show realized by Roberto Carlos García Rodríguez.
+rgarciarodriguez@uoc.edu""" ;
+                                                     rdfs:label "An Ontology of Friends television series to know which character appears in which season" ;
+                                                     rdfs:sameAs "https://dbpedia.org/ontology/TelevisionShow" ,
+                                                                 "https://dbpedia.org/page/Friends" ,
+                                                                 "https://dbpedia.org/page/List_of_Friends_and_Joey_characters" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasAppear
+:hasAppear rdf:type owl:ObjectProperty ;
+           owl:inverseOf :hasAppearIn ;
+           rdfs:domain :Seasons ;
+           rdfs:range :Characters .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasAppearIn
+:hasAppearIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :Characters ;
+             rdfs:range :Seasons .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasBirthMother
+:hasBirthMother rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasMother ;
+                owl:inverseOf :isBirthMotherOf ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Principals ;
+                rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasBrother
+:hasBrother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasFamily ;
+            owl:inverseOf :isBrotherOf ;
+            rdfs:domain :Principals ;
+            rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasDaughter
+:hasDaughter rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasFamily ;
+             owl:inverseOf :isDaughterOf ;
+             rdfs:domain :Principals ;
+             rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasFamily
+:hasFamily rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isFamilyOf ;
+           rdfs:domain :Principals ;
+           rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasFather
+:hasFather rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasFamily ;
+           owl:inverseOf :isFatherOf ;
+           rdfs:domain :Principals ;
+           rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasGrandfather
+:hasGrandfather rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasFamily ;
+                owl:inverseOf :isGrandfatherOf ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Principals ;
+                rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasGrandmother
+:hasGrandmother rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasFamily ;
+                owl:inverseOf :isGrandmotherOf ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Principals ;
+                rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasGuestRole
+:hasGuestRole rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasAppear ;
+              owl:inverseOf :hasGuestRoleIn ;
+              rdfs:domain :Seasons ;
+              rdfs:range :Characters .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasGuestRoleIn
+:hasGuestRoleIn rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasAppearIn ;
+                rdfs:domain :Characters ;
+                rdfs:range :Seasons .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasMainRole
+:hasMainRole rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasAppear ;
+             owl:inverseOf :hasMainRoleIn ;
+             rdfs:domain :Seasons ;
+             rdfs:range :Characters .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasMainRoleIn
+:hasMainRoleIn rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasAppearIn ;
+               rdfs:domain :Characters ;
+               rdfs:range :Seasons .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasMother
+:hasMother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasFamily ;
+           owl:inverseOf :isMotherOf ;
+           rdfs:domain :Principals ;
+           rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasRecurringRole
+:hasRecurringRole rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasAppear ;
+                  owl:inverseOf :hasRecurringRoleIn ;
+                  rdfs:domain :Seasons ;
+                  rdfs:range :Characters .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasRecurringRoleIn
+:hasRecurringRoleIn rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasAppearIn ;
+                    rdfs:domain :Characters ;
+                    rdfs:range :Seasons .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasSister
+:hasSister rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasFamily ;
+           owl:inverseOf :isSisterOf ;
+           rdfs:domain :Principals ;
+           rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasSon
+:hasSon rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasFamily ;
+        owl:inverseOf :isSonOf ;
+        rdfs:domain :Principals ;
+        rdfs:range :Secondaries .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isBirthMotherOf
+:isBirthMotherOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isMotherOf ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Secondaries ;
+                 rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isBrotherOf
+:isBrotherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isFamilyOf ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :Secondaries ;
+             rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isDaughterOf
+:isDaughterOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isFamilyOf ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :Secondaries ;
+              rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isFamilyOf
+:isFamilyOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :Secondaries ;
+            rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isFatherOf
+:isFatherOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isFamilyOf ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Secondaries ;
+            rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isGrandfatherOf
+:isGrandfatherOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isFamilyOf ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Secondaries ;
+                 rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isGrandmotherOf
+:isGrandmotherOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isFamilyOf ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Secondaries ;
+                 rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isMotherOf
+:isMotherOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isFamilyOf ;
+            rdfs:domain :Secondaries ;
+            rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isSisterOf
+:isSisterOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isFamilyOf ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Secondaries ;
+            rdfs:range :Principals .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#isSonOf
+:isSonOf rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :isFamilyOf ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Secondaries ;
+         rdfs:range :Principals .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasEpisodesNumber
+:hasEpisodesNumber rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Seasons ;
+                   rdfs:range xsd:integer .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasNumberOfRelationShips
+:hasNumberOfRelationShips rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf owl:topDataProperty ;
+                          rdfs:domain :Characters ;
+                          rdfs:range xsd:positiveInteger .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#hasYearOfBirth
+:hasYearOfBirth rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :Principals ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#mainJob
+:mainJob rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Principals ;
+         rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Alan
+:Alan rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonOne
+                      ] ;
+      rdfs:comment "Portrayed by Geoffrey Lower" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Alessandro
+:Alessandro rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonFour
+                            ] ;
+            rdfs:comment "Portrayed by Taylor Negron" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Alice_Knight_Buffay
+:Alice_Knight_Buffay rdf:type owl:Class ;
+                     rdfs:subClassOf :Secondaries ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasGuestRoleIn ;
+                                       owl:someValuesFrom :SeasonFive
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRecurringRoleIn ;
+                                       owl:someValuesFrom :SeasonFour
+                                     ] ;
+                     rdfs:comment "Portrayed by Debra Jo Rupp" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Amanda
+:Amanda rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ;
+        rdfs:comment "Portrayed by Laura Stepp" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Amanda_Buffamonteezi
+:Amanda_Buffamonteezi rdf:type owl:Class ;
+                      rdfs:subClassOf :Secondaries ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasGuestRoleIn ;
+                                        owl:someValuesFrom :SeasonTen
+                                      ] ;
+                      rdfs:comment "Portrayed by Jennifer Coolidge" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Amy_Green
+:Amy_Green rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonNine
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonTen
+                           ] ;
+           rdfs:comment "Portrayed by Christina Applegate" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Andrea_Waltham
+:Andrea_Waltham rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonFive
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonFour
+                                ] ;
+                rdfs:comment "Portrayed by Jennifer Saunders" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Annabel
+:Annabel rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonTwo
+                         ] ;
+         rdfs:comment "Portrayed by Emily Procter" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Aurora
+:Aurora rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonOne
+                        ] ;
+        rdfs:comment "Portrayed by Sofia Milos" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Barry_Farber
+:Barry_Farber rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonSix
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonTwo
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasRecurringRoleIn ;
+                                owl:someValuesFrom :SeasonOne
+                              ] ;
+              rdfs:comment "portrayed by Mitchell Whitfield" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ben_Geller
+:Ben_Geller rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonEight
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasRecurringRoleIn ;
+                              owl:someValuesFrom :SeasonSeven
+                            ] ;
+            rdfs:comment "Portrayed by Cole Sprouse" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Benjamin_Hobart
+:Benjamin_Hobart rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonTen
+                                 ] ;
+                 rdfs:comment "Portrayed by Greg Kinnear" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Bitsy_Hannigan
+:Bitsy_Hannigan rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonNine
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonTen
+                                ] ;
+                rdfs:comment "Portrayed by  Cristine Rose" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Bonnie
+:Bonnie rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Christine Taylor" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Brenda
+:Brenda rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonEight
+                        ] ;
+        rdfs:comment "Portrayed by Arden Myrin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Caitlin
+:Caitlin rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonFive
+                         ] ;
+         rdfs:comment "Portrayed by Kristin Dattilo" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Carl
+:Carl rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSix
+                      ] ;
+      rdfs:comment "Portrayed by Louis Mandylor" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Carol_Willick
+:Carol_Willick rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonFive
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonFour
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonSeven
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonSix
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonOne
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonTwo
+                               ] ;
+               rdfs:comment "portrayed by Anita Barone and Jane Sibbett" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Cassie_Geller
+:Cassie_Geller rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonSeven
+                               ] ;
+               rdfs:comment "Portrayed by Denise Richards" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Cecilia_Monroe
+:Cecilia_Monroe rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonSeven
+                                ] ;
+                rdfs:comment "Portrayed by Susan Sarandon" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Chandler_Bing
+:Chandler_Bing rdf:type owl:Class ;
+               rdfs:subClassOf :Principals ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDaughter ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :The_Chick
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasFather ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Helena_Handbasket
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonEight
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFive
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFour
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonNine
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonOne
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSeven
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSix
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTen
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonThree
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTwo
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Nora_Tyler_Bing
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasSon ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :The_Duck
+                               ] ;
+               rdfs:comment "Portrayed by Matthew Perry" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Characters
+:Characters rdf:type owl:Class ;
+            rdfs:subClassOf :Friends ;
+            rdfs:comment "All characters of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Charlie_Wheeler
+:Charlie_Wheeler rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRecurringRoleIn ;
+                                   owl:someValuesFrom :SeasonNine
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRecurringRoleIn ;
+                                   owl:someValuesFrom :SeasonTen
+                                 ] ;
+                 rdfs:comment "Portrayed by Aisha Tyler" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Charlton_Heston
+:Charlton_Heston rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFour
+                                 ] ;
+                 rdfs:comment "Portrayed by himself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Cheryl
+:Cheryl rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ;
+        rdfs:comment "Portrayed by Rebecca Romijn" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Chip_Matthews
+:Chip_Matthews rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonFour
+                               ] ;
+               rdfs:comment "Portrayed by Dan Gauthier" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Chloe
+:Chloe rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Angela Featherstone" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Clifford_Burnett
+:Clifford_Burnett rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonEight
+                                  ] ;
+                  rdfs:comment "Portrayed by Eddie McClintock" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Cookie_Tribbiani
+:Cookie_Tribbiani rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonThree
+                                  ] ;
+                  rdfs:comment "Portrayed by Alex Meneses" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dan
+:Dan rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonFive
+                     ] ;
+     rdfs:comment "Portrayed by Patrick Fabian" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dana
+:Dana rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSix
+                      ] ;
+      rdfs:comment "Portrayed by Bess Meyer" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Danny
+:Danny rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonFive
+                       ] ;
+       rdfs:comment "Portrayed by George Newbern" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dave
+:Dave rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonFive
+                      ] ;
+      rdfs:comment "Portrayed by Zen Gesner" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#David
+:David rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonSeven
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonNine
+                       ] ;
+       rdfs:comment "Portrayed by Hank Azaria" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dina_Lockhart
+:Dina_Lockhart rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonSeven
+                               ] ;
+               rdfs:comment "Portrayed by Eva Amurri" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dina_Tribbiani
+:Dina_Tribbiani rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonEight
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonThree
+                                ] ;
+                rdfs:comment "Portrayed by Lisa Melilli" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Don
+:Don rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonEight
+                     ] ;
+     rdfs:comment "Portrayed by Harry Van Gorkum" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Donny_Osmond
+:Donny_Osmond rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonTen
+                              ] ;
+              rdfs:comment "Portrayed by himself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Doug
+:Doug rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonEight
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonFive
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonThree
+                      ] ;
+      rdfs:comment "Portrayed by Sam McMurray" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Franzblau
+:Dr._Franzblau rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonOne
+                               ] ;
+               rdfs:comment "Portrayed by Jonathan Silverman" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Harad
+:Dr._Harad rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonFive
+                           ] ;
+           rdfs:comment "Portrayed by Sam Anderson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Ledbetter
+:Dr._Ledbetter rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonFive
+                               ] ;
+               rdfs:comment "Portrayed by Michael Ensign" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Leonard_Green
+:Dr._Leonard_Green rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonEight
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonTen
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonTwo
+                                   ] ;
+                   rdfs:comment "Portrayed by Ron Leibman" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Long
+:Dr._Long rdf:type owl:Class ;
+          rdfs:subClassOf :Secondaries ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonEight
+                          ] ;
+          rdfs:comment "Portrayed by Amanda Carlin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Mike_Horton
+:Dr._Mike_Horton rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonTwo
+                                 ] ;
+                 rdfs:comment "Portrayed by Roark Critchlow" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Miller
+:Dr._Miller rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonFive
+                            ] ;
+            rdfs:comment "Portrayed by Michael Monks" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Mitchell
+:Dr._Mitchell rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonOne
+                              ] ;
+              rdfs:comment "Portrayed by George Clooney" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Oberman
+:Dr._Oberman rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFive
+                             ] ;
+             rdfs:comment "Portrayed by T.J. Thyne" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Roger
+:Dr._Roger rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonSix
+                           ] ;
+           rdfs:comment "Portrayed by Pat Finn" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Dr._Rosen
+:Dr._Rosen rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonOne
+                           ] ;
+           rdfs:comment "Portrayed by Noah Wyle" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Earl
+:Earl rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSeven
+                      ] ;
+      rdfs:comment "Portrayed by Jason Alexander" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Eddie_Menuek
+:Eddie_Menuek rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasRecurringRoleIn ;
+                                owl:someValuesFrom :SeasonTwo
+                              ] ;
+              rdfs:comment "Portrayed by Adam Goldberg" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Eldad
+:Eldad rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonSix
+                       ] ;
+       rdfs:comment "Portrayed by Joshua Cox" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Elizabeth_Hornswoggle
+:Elizabeth_Hornswoggle rdf:type owl:Class ;
+                       rdfs:subClassOf :Secondaries ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasGuestRoleIn ;
+                                         owl:someValuesFrom :SeasonFive
+                                       ] ;
+                       rdfs:comment "Portrayed by Sarah Rose Peterson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Elizabeth_Stevens
+:Elizabeth_Stevens rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasRecurringRoleIn ;
+                                     owl:someValuesFrom :SeasonSix
+                                   ] ;
+                   rdfs:comment "Portrayed by Alexandra Holden" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ellen
+:Ellen rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonTen
+                       ] ;
+       rdfs:comment "Portrayed by Jane Lynch" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Emily_Waltham
+:Emily_Waltham rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonFive
+                               ] ;
+               rdfs:comment "Portrayed by Helen Baxendale" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Emma_Geller-Green
+:Emma_Geller-Green rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasRecurringRoleIn ;
+                                     owl:someValuesFrom :SeasonFour
+                                   ] ;
+                   rdfs:comment "Portrayed by Elizabeth and Genevieve Davidson and Alexandra and Athina Conley and Cali and Noelle Sheldon" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Encyclopedia_Salesman
+:Encyclopedia_Salesman rdf:type owl:Class ;
+                       rdfs:subClassOf :Secondaries ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasGuestRoleIn ;
+                                         owl:someValuesFrom :SeasonFour
+                                       ] ;
+                       rdfs:comment "Portrayed by Penn Jillette" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Eric
+:Eric rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRecurringRoleIn ;
+                        owl:someValuesFrom :SeasonEight
+                      ] ;
+      rdfs:comment "Portrayed by Sean Penn" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Erica
+:Erica rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonTen
+                       ] ;
+       rdfs:comment "Portrayed by Anna Faris" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Erica_Bing
+:Erica_Bing rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :SeasonTen
+                            ] ;
+            rdfs:comment "Unknown" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Erika
+:Erika rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonTwo
+                       ] ;
+       rdfs:comment "Portrayed by Brooke Shields" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Erin
+:Erin rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSeven
+                      ] ;
+      rdfs:comment "Portrayed by Kristin Davis" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Estelle_Leonard
+:Estelle_Leonard rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonEight
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFive
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonSeven
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonSix
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonThree
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRecurringRoleIn ;
+                                   owl:someValuesFrom :SeasonTwo
+                                 ] ;
+                 rdfs:comment "Portrayed by June Gable" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Fake_Monica
+:Fake_Monica rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonOne
+                             ] ;
+             rdfs:comment "Portrayed by Claudia Shear" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Felicity
+:Felicity rdf:type owl:Class ;
+          rdfs:subClassOf :Secondaries ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonFour
+                          ] ;
+          rdfs:comment "Portrayed by Olivia Williams" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Few_Relationships
+:Few_Relationships rdf:type owl:Class ;
+                   rdfs:subClassOf :Relationships ;
+                   rdfs:comment "main characters that have few relationships" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Fran_Devanow
+:Fran_Devanow rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonOne
+                              ] ;
+              rdfs:comment "Portrayed by Leila Kenzle" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Frances
+:Frances rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonTwo
+                         ] ;
+         rdfs:comment "Portrayed by Audra Lindley" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Jr.
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Jr.> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :Secondaries ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasGuestRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonFive
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasGuestRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonTen
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasGuestRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonTwo
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasRecurringRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonFour
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasRecurringRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonThree
+                                                                                     ] ;
+                                                                     rdfs:comment "Portrayed by Giovanni Ribisi" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Sr.
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Sr.> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :Secondaries ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasGuestRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonFive
+                                                                                     ] ;
+                                                                     rdfs:comment "Portrayed by Bob Balaban" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Friends
+:Friends rdf:type owl:Class .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Fun_Bobby
+:Fun_Bobby rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonTwo
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRecurringRoleIn ;
+                             owl:someValuesFrom :SeasonOne
+                           ] ;
+           rdfs:comment "Portrayed by Maggie Vincent Ventresca" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gary
+:Gary rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRecurringRoleIn ;
+                        owl:someValuesFrom :SeasonFive
+                      ] ;
+      rdfs:comment "Portrayed by Michael Rapaport" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gary_Collins
+:Gary_Collins rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonFive
+                              ] ;
+              rdfs:comment "Portrayed by himself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gavin_Mitchell
+:Gavin_Mitchell rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRecurringRoleIn ;
+                                  owl:someValuesFrom :SeasonNine
+                                ] ;
+                rdfs:comment "Portrayed by Dermot Multoney" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gina_Tribbiani
+:Gina_Tribbiani rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonThree
+                                ] ;
+                rdfs:comment "Portrayed by K.J. Steinberg and Drea de Matteo" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ginger
+:Ginger rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Sherilyn Fenn" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gloria_Tribbiani
+:Gloria_Tribbiani rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonOne
+                                  ] ;
+                  rdfs:comment "Portrayed by Brenda Vaccaro" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Grandma_Tribbiani
+:Grandma_Tribbiani rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonFive
+                                   ] ;
+                   rdfs:comment "Portrayed by Lilyan Chauvin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Gunther
+:Gunther rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonEight
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonFive
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonFour
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonNine
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonSeven
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonSix
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonTen
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonThree
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonTwo
+                         ] ;
+         rdfs:comment "Portrayed by James Michael Tyler" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Helena_Handbasket
+:Helena_Handbasket rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasRecurringRoleIn ;
+                                     owl:someValuesFrom :SeasonSeven
+                                   ] ;
+                   rdfs:comment "Portrayed by Kathleen Turner" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Hillary
+:Hillary rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonSix
+                         ] ;
+         rdfs:comment "Portrayed by Missi Pyle" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Hope_Brady
+:Hope_Brady rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonSix
+                            ] ;
+            rdfs:comment "Portrayed by Kristian Alfonso" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Isaac
+:Isaac rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Maury Gingsberg" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Isabella_Rosellini
+:Isabella_Rosellini rdf:type owl:Class ;
+                    rdfs:subClassOf :Secondaries ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasGuestRoleIn ;
+                                      owl:someValuesFrom :SeasonThree
+                                    ] ;
+                    rdfs:comment "Portrayed by herself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jack
+:Jack rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSix
+                      ] ;
+      rdfs:comment "Portrayed by Paul Gleason" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jack_Bing
+:Jack_Bing rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonTen
+                           ] ;
+           rdfs:comment "Unknown" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jack_Geller
+:Jack_Geller rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFive
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonNine
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonSix
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTen
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonEight
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonOne
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonSeven
+                             ] ;
+             rdfs:comment "Portrayed by Elliott Gould" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jade
+:Jade rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonTwo
+                      ] ;
+      rdfs:comment "Portrayed by Brittney Powell" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jake
+:Jake rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSeven
+                      ] ;
+      rdfs:comment "Portrayed by Troy Norton" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jamie_Buchman
+:Jamie_Buchman rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonOne
+                               ] ;
+               rdfs:comment "Portrayed by Helen Hunt" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Janice
+:Janice rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonEight
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFive
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonNine
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonTen
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonTwo
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonOne
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonSeven
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Maggie Wheeler" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Janine_Lecroix
+:Janine_Lecroix rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRecurringRoleIn ;
+                                  owl:someValuesFrom :SeasonSix
+                                ] ;
+                rdfs:comment "Portrayed by Elle Macpherson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jasmine
+:Jasmine rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonFour
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonOne
+                         ] ;
+         rdfs:comment "Portrayed by Cynthia Mann" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jason
+:Jason rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Robert Gant" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jean-Claude_Van_Damme
+:Jean-Claude_Van_Damme rdf:type owl:Class ;
+                       rdfs:subClassOf :Secondaries ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasGuestRoleIn ;
+                                         owl:someValuesFrom :SeasonTwo
+                                       ] ;
+                       rdfs:comment "Portrayed by himself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jen
+:Jen rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonFive
+                     ] ;
+     rdfs:comment "Portrayed by Samantha Smith" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jessica_Ashley
+:Jessica_Ashley rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonSeven
+                                ] ;
+                rdfs:comment "Portrayed by Alison Sweeney" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jill_Goodacre
+:Jill_Goodacre rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonOne
+                               ] ;
+               rdfs:comment "Portrayed by herself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jill_Green
+:Jill_Green rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasRecurringRoleIn ;
+                              owl:someValuesFrom :SeasonSix
+                            ] ;
+            rdfs:comment "Portrayed by Reese Witherspoon" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Jim
+:Jim rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonEight
+                     ] ;
+     rdfs:comment "Portrayed by James LeGros" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joanna
+:Joanna rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ;
+        rdfs:comment "Portrayed by Alison LaPlaca" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joanne
+:Joanne rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonOne
+                        ] ;
+        rdfs:comment "Portrayed by Marianne Hagan" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani
+:Joey_Tribbiani rdf:type owl:Class ;
+                rdfs:subClassOf :Principals ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasDaughter ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :The_Chick
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasFather ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass <http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani_Sr.>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGrandmother ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Grandma_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonEight
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonFive
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonFour
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonNine
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonOne
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonSeven
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonSix
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonTen
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonThree
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMainRoleIn ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :SeasonTwo
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMother ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Gloria_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Cookie_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Dina_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Gina_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Maria_Teresa_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :María_Ángela_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Tina_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSister ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Verónica_Tribbiani
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSon ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :The_Duck
+                                ] ;
+                rdfs:comment "Portrayed by Matt LeBlanc" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani_Sr.
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani_Sr.> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf :Secondaries ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty :hasGuestRoleIn ;
+                                                                                         owl:someValuesFrom :SeasonOne
+                                                                                       ] ;
+                                                                       rdfs:comment "Portrayed by Robert Costanzo" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joshua_Burgin
+:Joshua_Burgin rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonFour
+                               ] ;
+               rdfs:comment "Portrayed by Tate Donovan" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Judy_Geller
+:Judy_Geller rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFive
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonNine
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonSix
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTen
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonEight
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonOne
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonSeven
+                             ] ;
+             rdfs:comment "Portrayed by Christina Pickles" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Julie
+:Julie rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonTwo
+                       ] ;
+       rdfs:comment "Portrayed by Lauren Tom" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Julie_Graff
+:Julie_Graff rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonSeven
+                             ] ;
+             rdfs:comment "Portrayed by Stacy Galina" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kash
+:Kash rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonEight
+                      ] ;
+      rdfs:comment "Portrayed by Johnny Messner" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kate_Miller
+:Kate_Miller rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonThree
+                             ] ;
+             rdfs:comment "Portrayed by Dina Meyer" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kathy
+:Kathy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonFour
+                       ] ;
+       rdfs:comment "Portrayed by Paget Brewster" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Katie
+:Katie rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonFive
+                       ] ;
+       rdfs:comment "Portrayed by Soleil Moon Frye" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Katie_Flirty_Sales_Assistant
+:Katie_Flirty_Sales_Assistant rdf:type owl:Class ;
+                              rdfs:subClassOf :Secondaries ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasGuestRoleIn ;
+                                                owl:someValuesFrom :SeasonEight
+                                              ] ;
+                              rdfs:comment "Portrayed by Rena Sofer" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kiki
+:Kiki rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonOne
+                      ] ;
+      rdfs:comment "Portrayed by Michele Maika" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kim_Clozzi
+:Kim_Clozzi rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonFive
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonSix
+                            ] ;
+            rdfs:comment "Portrayed by Joanna Gleason" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Krista
+:Krista rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFive
+                        ] ;
+        rdfs:comment "Portrayed by Julie Lauren" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kristen_Lang
+:Kristen_Lang rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonSeven
+                              ] ;
+              rdfs:comment "Portrayed by Grabielle Union" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Kyle
+:Kyle rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonSeven
+                      ] ;
+      rdfs:comment "Portrayed by David Sutcliffe" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Larry
+:Larry rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonFive
+                       ] ;
+       rdfs:comment "Portrayed by Gregory Sporleder" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Laura
+:Laura rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonTen
+                       ] ;
+       rdfs:comment "Portrayed by Maria Pitillo" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Lauren
+:Lauren rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Jennifer Milmore" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Leonard_Hayes
+:Leonard_Hayes rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonNine
+                               ] ;
+               rdfs:comment "Portrayed by Jeff Goldblum" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Leslie
+:Leslie rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Elizabeth Daily" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Lizzy
+:Lizzy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ;
+       rdfs:comment "Portrayed by Beth Grant" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Lowell_The_Mugger
+:Lowell_The_Mugger rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonNine
+                                   ] ;
+                   rdfs:comment "Portrayed by Kyle Gass" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Lydia
+:Lydia rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ;
+       rdfs:comment "Portrayed by Leah Remini" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mackenzie
+:Mackenzie rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonTen
+                           ] ;
+           rdfs:comment "Portrayed by Dakota Fanning" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Malcolm
+:Malcolm rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonThree
+                         ] ;
+         rdfs:comment "Portrayed by David Arquette" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Many_Relationships
+:Many_Relationships rdf:type owl:Class ;
+                    rdfs:subClassOf :Relationships ;
+                    rdfs:comment "main characters that have many relationships" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Marcel
+:Marcel rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonOne
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonTwo
+                        ] ;
+        rdfs:comment "Is a monkey" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Margha
+:Margha rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonThree
+                        ] ;
+        rdfs:comment "Portrayed by Suzanna Voltaire" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Maria_Teresa_Tribbiani
+:Maria_Teresa_Tribbiani rdf:type owl:Class ;
+                        rdfs:subClassOf :Secondaries ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasGuestRoleIn ;
+                                          owl:someValuesFrom :SeasonThree
+                                        ] ;
+                        rdfs:comment "Portrayed by Mimi Lieber" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Marjorie
+:Marjorie rdf:type owl:Class ;
+          rdfs:subClassOf :Secondaries ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonFour
+                          ] ;
+          rdfs:comment "Portrayed by Christina Moore" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mark_Robinson
+:Mark_Robinson rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonThree
+                               ] ;
+               rdfs:comment "Portrayed by Steven Eckholdt" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Marsha
+:Marsha rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonOne
+                        ] ;
+        rdfs:comment "Portrayed by Merrill Markoe" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Marshall_Townend
+:Marshall_Townend rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonThree
+                                  ] ;
+                  rdfs:comment "Portrayed by Reg Rogers" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#María_Ángela_Tribbiani
+:María_Ángela_Tribbiani rdf:type owl:Class ;
+                        rdfs:subClassOf :Secondaries ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasGuestRoleIn ;
+                                          owl:someValuesFrom :SeasonThree
+                                        ] ;
+                        rdfs:comment "Portrayed by Holly Gagnier" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Melanie
+:Melanie rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonOne
+                         ] ;
+         rdfs:comment "Portrayed by Corinne Bohrer" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Melissa_Warburton
+:Melissa_Warburton rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonSeven
+                                   ] ;
+                   rdfs:comment "Portrayed by Winona Ryder" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Michael
+:Michael rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonTwo
+                         ] ;
+         rdfs:comment "Portrayed by Arye Gross" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mike_Hannigan
+:Mike_Hannigan rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonNine
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonTen
+                               ] ;
+               rdfs:comment "Portrayed by Paul Rudd" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mindy_Hunter
+:Mindy_Hunter rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonOne
+                              ] ;
+              rdfs:comment "Portrayed by Jennifer Grey" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Missy_Goldberg
+:Missy_Goldberg rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonTen
+                                ] ;
+                rdfs:comment "Portrayed by Ellen Pompeo" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Moderate_Relationships
+:Moderate_Relationships rdf:type owl:Class ;
+                        rdfs:subClassOf :Relationships ;
+                        rdfs:comment "main characters that have moderate relationships" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Molly
+:Molly rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonNine
+                       ] ;
+       rdfs:comment "Portrayed by Melissa George" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mona
+:Mona rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRecurringRoleIn ;
+                        owl:someValuesFrom :SeasonEight
+                      ] ;
+      rdfs:comment "Portrayed by Bonnie Somerville" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Monica_Geller
+:Monica_Geller rdf:type owl:Class ;
+               rdfs:subClassOf :Principals ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasBrother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Ross_Geller
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDaughter ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Erica_Bing
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasFather ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Jack_Geller
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonEight
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFive
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFour
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonNine
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonOne
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSeven
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSix
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTen
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonThree
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTwo
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Judy_Geller
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasSon ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Jack_Bing
+                               ] ;
+               rdfs:comment "Portrayed by Courteney Cox" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Adelman
+:Mr._Adelman rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ;
+             rdfs:comment "Portrayed by Phil Leeds" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Douglas
+:Mr._Douglas rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ;
+             rdfs:comment "Portrayed by Dorien Wilson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Franklin
+:Mr._Franklin rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonEight
+                              ] ;
+              rdfs:comment "Portrayed by Geoff Pierson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Heckles
+:Mr._Heckles rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonThree
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonOne
+                             ] ;
+             rdfs:comment "Portrayed by Larry Hankin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Kaplan_Jr.
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Kaplan_Jr.> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf :Secondaries ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :hasGuestRoleIn ;
+                                                                                     owl:someValuesFrom :SeasonThree
+                                                                                   ] ;
+                                                                   rdfs:comment "Portrayed by Shelley Berman" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Rastatter
+:Mr._Rastatter rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonTwo
+                               ] ;
+               rdfs:comment "Portrayed by Michael McKean" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Treeger
+:Mr._Treeger rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonFour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ;
+             rdfs:comment "Portrayed by Mike Hagerty" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Waltham
+:Mr._Waltham rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFour
+                             ] ;
+             rdfs:comment "Portrayed by Jennifer Saunders" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Zelner
+:Mr._Zelner rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonEight
+                            ] ;
+            rdfs:comment "Portrayed by Steve Ireland" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ms._McKenna
+:Ms._McKenna rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonNine
+                             ] ;
+             rdfs:comment "Portrayed by Janet Hubert" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Nancy
+:Nancy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonFive
+                       ] ;
+       rdfs:comment "Portrayed by Megan Ward" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ned_Morse
+:Ned_Morse rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonSeven
+                           ] ;
+           rdfs:comment "Portrayed by Vince Vieluf" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Nina
+:Nina rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonOne
+                      ] ;
+      rdfs:comment "Portrayed by Jennifer Grant" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Nora_Tyler_Bing
+:Nora_Tyler_Bing rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonEight
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFive
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonOne
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRecurringRoleIn ;
+                                   owl:someValuesFrom :SeasonSeven
+                                 ] ;
+                 rdfs:comment "Portrayed by Morgan Fairchild" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Nurse_Kitty
+:Nurse_Kitty rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonNine
+                             ] ;
+             rdfs:comment "Portrayed by Cleo King" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Paolo
+:Paolo rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonTwo
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ;
+       rdfs:comment "portrayed by Cosimo Fusco" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Parker
+:Parker rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonEight
+                        ] ;
+        rdfs:comment "Portrayed by Alec Baldwin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Patrick
+:Patrick rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonSix
+                         ] ;
+         rdfs:comment "Portrayed by Chris Kennedy" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Paul_Stevens
+:Paul_Stevens rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasRecurringRoleIn ;
+                                owl:someValuesFrom :SeasonSix
+                              ] ;
+              rdfs:comment "Portrayed by Bruce Willis" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Paul_the_Wine_Guy
+:Paul_the_Wine_Guy rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonOne
+                                   ] ;
+                   rdfs:comment "Portrayed by John Allen Nelson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Pete_Becker
+:Pete_Becker rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonThree
+                             ] ;
+             rdfs:comment "Portrayed by Jon Favreau" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Abbot_Sr.
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Abbot_Sr.> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf :Secondaries ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasRecurringRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonFour
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :hasRecurringRoleIn ;
+                                                                                       owl:someValuesFrom :SeasonThree
+                                                                                     ] ;
+                                                                     rdfs:comment "Portrayed by Teri Garr" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Buffay
+:Phoebe_Buffay rdf:type owl:Class ;
+               rdfs:subClassOf :Principals ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasBirthMother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass <http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Abbot_Sr.>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasBrother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass <http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Jr.>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasFather ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass <http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Sr.>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGrandmother ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Frances
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonEight
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFive
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonFour
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonNine
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonOne
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSeven
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonSix
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTen
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonThree
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMainRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonTwo
+                               ] ;
+               rdfs:comment "portrayed by Lisa Kudrow" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Precious
+:Precious rdf:type owl:Class ;
+          rdfs:subClassOf :Secondaries ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonTen
+                          ] ;
+          rdfs:comment "Portrayed by Anne Dudek" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Principals
+:Principals rdf:type owl:Class ;
+            rdfs:subClassOf :Characters ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMainRoleIn ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :SeasonEight
+                                                                :SeasonFive
+                                                                :SeasonFour
+                                                                :SeasonNine
+                                                                :SeasonOne
+                                                                :SeasonSeven
+                                                                :SeasonSix
+                                                                :SeasonTen
+                                                                :SeasonThree
+                                                                :SeasonTwo
+                                                              )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasNumberOfRelationShips ;
+                              owl:someValuesFrom xsd:positiveInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :mainJob ;
+                              owl:someValuesFrom xsd:string
+                            ] ;
+            rdfs:comment "Main characters of Friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Rachel_Green
+:Rachel_Green rdf:type owl:Class ;
+              rdfs:subClassOf :Principals ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasDaughter ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Emma_Geller-Green
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasFather ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Dr._Leonard_Green
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonEight
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonFive
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonFour
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonNine
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonOne
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonSeven
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonSix
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonTen
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonThree
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMainRoleIn ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :SeasonTwo
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMother ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Sandra_Green
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSister ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Amy_Green
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSister ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Jill_Green
+                              ] ;
+              rdfs:comment "portrayed by Jennifer Aniston" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ralph_Lauren
+:Ralph_Lauren rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonSix
+                              ] ;
+              rdfs:comment "Portrayed by himself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Randall
+:Randall rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGuestRoleIn ;
+                           owl:someValuesFrom :SeasonFive
+                         ] ;
+         rdfs:comment "Portrayed by Thomas Lennon" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Relationships
+:Relationships rdf:type owl:Class ;
+               rdfs:subClassOf :Friends ;
+               rdfs:comment "represents number of relationships of main characters" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Rhonda
+:Rhonda rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasGuestRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ;
+        rdfs:comment "Portrayed by Sherri Shepherd" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Richard_Burke
+:Richard_Burke rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonThree
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonSix
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRecurringRoleIn ;
+                                 owl:someValuesFrom :SeasonTwo
+                               ] ;
+               rdfs:comment "Portrayed by Tom Selleck" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Richard_Crosby
+:Richard_Crosby rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonSeven
+                                ] ;
+                rdfs:comment "Portrayed by Gary Oldman" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Rick
+:Rick rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonFour
+                      ] ;
+      rdfs:comment "Portrayed by Jason Brooks" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Rick_The_Hitchhiker
+:Rick_The_Hitchhiker rdf:type owl:Class ;
+                     rdfs:subClassOf :Secondaries ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasGuestRoleIn ;
+                                       owl:someValuesFrom :SeasonSix
+                                     ] ;
+                     rdfs:comment "Portrayed by Bill Stevenson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Rob_Donnen
+:Rob_Donnen rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonTwo
+                            ] ;
+            rdfs:comment "Portrayed by Chris Isaak" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Roger
+:Roger rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ;
+       rdfs:comment "Portrayed by Fisher Stevens" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ronni
+:Ronni rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ;
+       rdfs:comment "Portrayed by Lee Garlington" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ross_Geller
+:Ross_Geller rdf:type owl:Class ;
+             rdfs:subClassOf :Principals ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasDaughter ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Emma_Geller-Green
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasFather ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Jack_Geller
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonEight
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonFive
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonFour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonNine
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonOne
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonSeven
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonSix
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonTen
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonThree
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMainRoleIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SeasonTwo
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMother ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Judy_Geller
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasSister ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Monica_Geller
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasSon ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Ben_Geller
+                             ] ;
+             rdfs:comment "portrayed by David Schwimmer" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Russell
+:Russell rdf:type owl:Class ;
+         rdfs:subClassOf :Secondaries ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRecurringRoleIn ;
+                           owl:someValuesFrom :SeasonSix
+                         ] ;
+         rdfs:comment "Portrayed by Ron Glass" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ryan
+:Ryan rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonTwo
+                      ] ;
+      rdfs:comment "Portrayed by Charlie Sheen" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sandra_Green
+:Sandra_Green rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonEight
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonTwo
+                              ] ;
+              rdfs:comment "Portrayed by Marlo Thomas" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sandy
+:Sandy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonNine
+                       ] ;
+       rdfs:comment "Portrayed by Freddie Prinze Jr." .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sarah_Ferguson
+:Sarah_Ferguson rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonFour
+                                ] ;
+                rdfs:comment "Portrayed by herself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonEight
+:SeasonEight rdf:type owl:Class ;
+             rdfs:subClassOf :Seasons ;
+             rdfs:comment "The eighth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonFive
+:SeasonFive rdf:type owl:Class ;
+            rdfs:subClassOf :Seasons ;
+            rdfs:comment "The fifth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonFour
+:SeasonFour rdf:type owl:Class ;
+            rdfs:subClassOf :Seasons ;
+            rdfs:comment "The fourth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonNine
+:SeasonNine rdf:type owl:Class ;
+            rdfs:subClassOf :Seasons ;
+            rdfs:comment "The ninth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonOne
+:SeasonOne rdf:type owl:Class ;
+           rdfs:subClassOf :Seasons ;
+           rdfs:comment "The first season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonSeven
+:SeasonSeven rdf:type owl:Class ;
+             rdfs:subClassOf :Seasons ;
+             rdfs:comment "The seventh season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonSix
+:SeasonSix rdf:type owl:Class ;
+           rdfs:subClassOf :Seasons ;
+           rdfs:comment "The sixth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonTen
+:SeasonTen rdf:type owl:Class ;
+           rdfs:subClassOf :Seasons ;
+           rdfs:comment "The tenth season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonThree
+:SeasonThree rdf:type owl:Class ;
+             rdfs:subClassOf :Seasons ;
+             rdfs:comment "The third season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#SeasonTwo
+:SeasonTwo rdf:type owl:Class ;
+           rdfs:subClassOf :Seasons ;
+           rdfs:comment "The second season of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Seasons
+:Seasons rdf:type owl:Class ;
+         rdfs:subClassOf :Friends ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEpisodesNumber ;
+                           owl:someValuesFrom xsd:integer
+                         ] ;
+         rdfs:comment "represents all seasons of this serie" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sebastian
+:Sebastian rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonSix
+                           ] ;
+           rdfs:comment "Portrayed by Scott Paetty" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Secondaries
+:Secondaries rdf:type owl:Class ;
+             rdfs:subClassOf :Characters ;
+             rdfs:comment "recurrent and guest characters of friends" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sid
+:Sid rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonEight
+                     ] ;
+     rdfs:comment "Portrayed by Maurice Godin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Sophie
+:Sophie rdf:type owl:Class ;
+        rdfs:subClassOf :Secondaries ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasRecurringRoleIn ;
+                          owl:someValuesFrom :SeasonFour
+                        ] ;
+        rdfs:comment "Portrayed by Laura Dean" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Stephanie_Schiffer
+:Stephanie_Schiffer rdf:type owl:Class ;
+                    rdfs:subClassOf :Secondaries ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasGuestRoleIn ;
+                                      owl:someValuesFrom :SeasonTwo
+                                    ] ;
+                    rdfs:comment "Portrayed by Chrissie Hynde" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Stephen_Waltham
+:Stephen_Waltham rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFive
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFour
+                                 ] ;
+                 rdfs:comment "Portrayed by Tom Conti" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Steve
+:Steve rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonFive
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonOne
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasRecurringRoleIn ;
+                         owl:someValuesFrom :SeasonNine
+                       ] ;
+       rdfs:comment "Portrayed by Jon Lovitz" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Steven_Fishman
+:Steven_Fishman rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonTwo
+                                ] ;
+                rdfs:comment "Portrayed by Chris Young" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Stu
+:Stu rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonEight
+                     ] ;
+     rdfs:comment "Portrayed by Fred Stoller" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Susan_Bunch
+:Susan_Bunch rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFive
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonSix
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonOne
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasRecurringRoleIn ;
+                               owl:someValuesFrom :SeasonTwo
+                             ] ;
+             rdfs:comment "Portrayed by Jessica Hecht" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Susie_Moss
+:Susie_Moss rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonTwo
+                            ] ;
+            rdfs:comment "Portrayed by Julia Roberts" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tag_Jones
+:Tag_Jones rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonEight
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRecurringRoleIn ;
+                             owl:someValuesFrom :SeasonSeven
+                           ] ;
+           rdfs:comment "Portrayed by Eddie Cahill" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Terry
+:Terry rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonTwo
+                       ] ;
+       rdfs:comment "Portrayed by Max Wright" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Baby_Sniffer
+:The_Baby_Sniffer rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonTwo
+                                  ] ;
+                  rdfs:comment "Portrayed by Lea Thompson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Chick
+:The_Chick rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonFive
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonFour
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonSix
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonThree
+                           ] ;
+           rdfs:comment "Is a chick animal" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Croupier
+:The_Croupier rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonFive
+                              ] ;
+              rdfs:comment "Portrayed by Rick Pasqualone" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Customer
+:The_Customer rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonSix
+                              ] ;
+              rdfs:comment "unknown" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Duck
+:The_Duck rdf:type owl:Class ;
+          rdfs:subClassOf :Secondaries ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonFive
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonFour
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonSeven
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonSix
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGuestRoleIn ;
+                            owl:someValuesFrom :SeasonThree
+                          ] ;
+          rdfs:comment "is a duck animal" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Elderly_Woman
+:The_Elderly_Woman rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonFive
+                                   ] ;
+                   rdfs:comment "Portrayed by Jeanette Miller" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Gentleman_On_The_Plane
+:The_Gentleman_On_The_Plane rdf:type owl:Class ;
+                            rdfs:subClassOf :Secondaries ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasGuestRoleIn ;
+                                              owl:someValuesFrom :SeasonFour
+                                            ] ;
+                            rdfs:comment "Portrayed by Hugh Moore" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Horrible_Woman
+:The_Horrible_Woman rdf:type owl:Class ;
+                    rdfs:subClassOf :Secondaries ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasGuestRoleIn ;
+                                      owl:someValuesFrom :SeasonOne
+                                    ] ;
+                    rdfs:comment "Portrayed by Camille Saviola" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Housekeeper
+:The_Housekeeper rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonFour
+                                 ] ;
+                 rdfs:comment "Portrayed by June Whitfield" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Jeweller
+:The_Jeweller rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonSix
+                              ] ;
+              rdfs:comment "Portrayed by Oliver Muirhead" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Judge
+:The_Judge rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonSix
+                           ] ;
+           rdfs:comment "Portrayed by Conchata Ferrell" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Nurse
+:The_Nurse rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonOne
+                           ] ;
+           rdfs:comment "Portrayed by June Gable" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Script_Messenger
+:The_Script_Messenger rdf:type owl:Class ;
+                      rdfs:subClassOf :Secondaries ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasGuestRoleIn ;
+                                        owl:someValuesFrom :SeasonTwo
+                                      ] ;
+                      rdfs:comment "Portrayed by Brain Posehn" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Stripper
+:The_Stripper rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonTen
+                              ] ;
+              rdfs:comment "Portrayed by Danny DeVito" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Teacher
+:The_Teacher rdf:type owl:Class ;
+             rdfs:subClassOf :Secondaries ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasGuestRoleIn ;
+                               owl:someValuesFrom :SeasonFive
+                             ] ;
+             rdfs:comment "Portrayed by Scott Mosenson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Ticket_Agent
+:The_Ticket_Agent rdf:type owl:Class ;
+                  rdfs:subClassOf :Secondaries ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGuestRoleIn ;
+                                    owl:someValuesFrom :SeasonFour
+                                  ] ;
+                  rdfs:comment "Portrayed by Jane Carr" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Triplets
+:The_Triplets rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonFive
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonTen
+                              ] ;
+              rdfs:comment "unknown" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Waiter
+:The_Waiter rdf:type owl:Class ;
+            rdfs:subClassOf :Secondaries ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonEight
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasGuestRoleIn ;
+                              owl:someValuesFrom :SeasonNine
+                            ] ;
+            rdfs:comment "Portrayed by Sam Pancake" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Woman_On_The_Train
+:The_Woman_On_The_Train rdf:type owl:Class ;
+                        rdfs:subClassOf :Secondaries ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasGuestRoleIn ;
+                                          owl:someValuesFrom :SeasonFour
+                                        ] ;
+                        rdfs:comment "Portrayed by Shannon Maureen" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Zoo_Janitor
+:The_Zoo_Janitor rdf:type owl:Class ;
+                 rdfs:subClassOf :Secondaries ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasGuestRoleIn ;
+                                   owl:someValuesFrom :SeasonTwo
+                                 ] ;
+                 rdfs:comment "Portrayed by Dan Castellaneta" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#The_Zookeeper
+:The_Zookeeper rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonTwo
+                               ] ;
+               rdfs:comment "Portrayed by Fred Willard" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Theodore_Hannigan
+:Theodore_Hannigan rdf:type owl:Class ;
+                   rdfs:subClassOf :Secondaries ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonNine
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasGuestRoleIn ;
+                                     owl:someValuesFrom :SeasonTen
+                                   ] ;
+                   rdfs:comment "Portrayed by Gregory Itzin" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tim
+:Tim rdf:type owl:Class ;
+     rdfs:subClassOf :Secondaries ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasGuestRoleIn ;
+                       owl:someValuesFrom :SeasonThree
+                     ] ;
+     rdfs:comment "Portrayed by Billie Crystal" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tim_Burke
+:Tim_Burke rdf:type owl:Class ;
+           rdfs:subClassOf :Secondaries ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGuestRoleIn ;
+                             owl:someValuesFrom :SeasonFour
+                           ] ;
+           rdfs:comment "Portrayed by Michael Vartan" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tina_Tribbiani
+:Tina_Tribbiani rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonThree
+                                ] ;
+                rdfs:comment "Portrayed by Lisa Maris" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Todd
+:Todd rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonTwo
+                      ] ;
+      rdfs:comment "Portrayed by Joel Beeson" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tomas
+:Tomas rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Robin Williams" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Tommy
+:Tommy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Ben Stiller" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Trudie_Styler
+:Trudie_Styler rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:someValuesFrom :SeasonEight
+                               ] ;
+               rdfs:comment "Portrayed by herself" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ugly_Naked_Guy
+:Ugly_Naked_Guy rdf:type owl:Class ;
+                rdfs:subClassOf :Secondaries ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonFive
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasGuestRoleIn ;
+                                  owl:someValuesFrom :SeasonThree
+                                ] ;
+                rdfs:comment "Portrayed by Jon Haugen" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Ursula_Buffay
+:Ursula_Buffay rdf:type owl:Class ;
+               rdfs:subClassOf :Secondaries ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonEight
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasGuestRoleIn ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :SeasonOne
+                               ] ;
+               rdfs:comment "Portrayed by Lisa Kudrow" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Verónica_Tribbiani
+:Verónica_Tribbiani rdf:type owl:Class ;
+                    rdfs:subClassOf :Secondaries ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasGuestRoleIn ;
+                                      owl:someValuesFrom :SeasonThree
+                                    ] ;
+                    rdfs:comment "unknown" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Vince
+:Vince rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonThree
+                       ] ;
+       rdfs:comment "Portrayed by Matt Battaglia" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Wayne
+:Wayne rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonSix
+                       ] ;
+       rdfs:comment "Portrayed by Andrew Bilgore" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Wendy
+:Wendy rdf:type owl:Class ;
+       rdfs:subClassOf :Secondaries ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGuestRoleIn ;
+                         owl:someValuesFrom :SeasonNine
+                       ] ;
+       rdfs:comment "Portrayed by Selma Blair" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Will_Colbert
+:Will_Colbert rdf:type owl:Class ;
+              rdfs:subClassOf :Secondaries ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasGuestRoleIn ;
+                                owl:someValuesFrom :SeasonEight
+                              ] ;
+              rdfs:comment "Portrayed by Brad Pitt" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Zack
+:Zack rdf:type owl:Class ;
+      rdfs:subClassOf :Secondaries ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGuestRoleIn ;
+                        owl:someValuesFrom :SeasonNine
+                      ] ;
+      rdfs:comment "Portrayed by John Stamos" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Joey's_Doctor
+<http://www.uoc.edu/roberto/ontologies/friends.owl#Joey's_Doctor> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf :Secondaries ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :hasGuestRoleIn ;
+                                                                                    owl:someValuesFrom :SeasonFive
+                                                                                  ] ;
+                                                                  rdfs:comment "Portrayed by Iqbal Theba" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Example_Gina_Tribbiani
+:Example_Gina_Tribbiani rdf:type owl:NamedIndividual ,
+                                 :Gina_Tribbiani ;
+                        :hasGuestRoleIn :Example_Season_Three ;
+                        :isMotherOf :Example_Joey_Tribbiani .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Example_Joey_Tribbiani
+:Example_Joey_Tribbiani rdf:type owl:NamedIndividual ,
+                                 :Few_Relationships ,
+                                 :Joey_Tribbiani ;
+                        :hasMainRoleIn :Example_Season_One ,
+                                       :Example_Season_Ten ,
+                                       :Example_Season_Three ;
+                        :hasMother :Example_Gina_Tribbiani ;
+                        :hasNumberOfRelationShips "6"^^xsd:positiveInteger ;
+                        :mainJob "Actor" .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Example_Season_One
+:Example_Season_One rdf:type owl:NamedIndividual ,
+                             :SeasonOne ;
+                    :hasMainRole :Example_Joey_Tribbiani ;
+                    :hasEpisodesNumber 24 .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Example_Season_Ten
+:Example_Season_Ten rdf:type owl:NamedIndividual ,
+                             :SeasonTen ;
+                    :hasMainRole :Example_Joey_Tribbiani ;
+                    :hasEpisodesNumber 18 .
+
+
+###  http://www.uoc.edu/roberto/ontologies/friends.owl#Example_Season_Three
+:Example_Season_Three rdf:type owl:NamedIndividual ,
+                               :Characters ,
+                               :SeasonThree ;
+                      :hasGuestRole :Example_Gina_Tribbiani ;
+                      :hasMainRole :Example_Joey_Tribbiani ;
+                      :hasEpisodesNumber 25 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Alan
+                :Alessandro
+                :Alice_Knight_Buffay
+                :Amanda
+                :Amanda_Buffamonteezi
+                :Amy_Green
+                :Andrea_Waltham
+                :Annabel
+                :Aurora
+                :Barry_Farber
+                :Ben_Geller
+                :Benjamin_Hobart
+                :Bitsy_Hannigan
+                :Bonnie
+                :Brenda
+                :Caitlin
+                :Carl
+                :Carol_Willick
+                :Cassie_Geller
+                :Cecilia_Monroe
+                :Charlie_Wheeler
+                :Charlton_Heston
+                :Cheryl
+                :Chip_Matthews
+                :Chloe
+                :Clifford_Burnett
+                :Cookie_Tribbiani
+                :Dan
+                :Dana
+                :Danny
+                :Dave
+                :David
+                :Dina_Lockhart
+                :Dina_Tribbiani
+                :Don
+                :Donny_Osmond
+                :Doug
+                :Dr._Franzblau
+                :Dr._Harad
+                :Dr._Ledbetter
+                :Dr._Leonard_Green
+                :Dr._Long
+                :Dr._Mike_Horton
+                :Dr._Miller
+                :Dr._Mitchell
+                :Dr._Oberman
+                :Dr._Roger
+                :Dr._Rosen
+                :Earl
+                :Eddie_Menuek
+                :Eldad
+                :Elizabeth_Hornswoggle
+                :Elizabeth_Stevens
+                :Ellen
+                :Emily_Waltham
+                :Emma_Geller-Green
+                :Encyclopedia_Salesman
+                :Eric
+                :Erica
+                :Erica_Bing
+                :Erika
+                :Erin
+                :Estelle_Leonard
+                :Fake_Monica
+                :Felicity
+                :Fran_Devanow
+                :Frances
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Jr.>
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Frank_Buffay_Sr.>
+                :Fun_Bobby
+                :Gary
+                :Gary_Collins
+                :Gavin_Mitchell
+                :Gina_Tribbiani
+                :Ginger
+                :Gloria_Tribbiani
+                :Grandma_Tribbiani
+                :Gunther
+                :Helena_Handbasket
+                :Hillary
+                :Hope_Brady
+                :Isaac
+                :Isabella_Rosellini
+                :Jack
+                :Jack_Bing
+                :Jack_Geller
+                :Jade
+                :Jake
+                :Jamie_Buchman
+                :Janice
+                :Janine_Lecroix
+                :Jasmine
+                :Jason
+                :Jean-Claude_Van_Damme
+                :Jen
+                :Jessica_Ashley
+                :Jill_Goodacre
+                :Jill_Green
+                :Jim
+                :Joanna
+                :Joanne
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Joey_Tribbiani_Sr.>
+                :Joshua_Burgin
+                :Judy_Geller
+                :Julie
+                :Julie_Graff
+                :Kash
+                :Kate_Miller
+                :Kathy
+                :Katie
+                :Katie_Flirty_Sales_Assistant
+                :Kiki
+                :Kim_Clozzi
+                :Krista
+                :Kristen_Lang
+                :Kyle
+                :Larry
+                :Laura
+                :Lauren
+                :Leonard_Hayes
+                :Leslie
+                :Lizzy
+                :Lowell_The_Mugger
+                :Lydia
+                :Mackenzie
+                :Malcolm
+                :Marcel
+                :Margha
+                :Maria_Teresa_Tribbiani
+                :Marjorie
+                :Mark_Robinson
+                :Marsha
+                :Marshall_Townend
+                :María_Ángela_Tribbiani
+                :Melanie
+                :Melissa_Warburton
+                :Michael
+                :Mike_Hannigan
+                :Mindy_Hunter
+                :Missy_Goldberg
+                :Molly
+                :Mona
+                :Mr._Adelman
+                :Mr._Douglas
+                :Mr._Franklin
+                :Mr._Heckles
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Mr._Kaplan_Jr.>
+                :Mr._Rastatter
+                :Mr._Treeger
+                :Mr._Waltham
+                :Mr._Zelner
+                :Ms._McKenna
+                :Nancy
+                :Ned_Morse
+                :Nina
+                :Nora_Tyler_Bing
+                :Nurse_Kitty
+                :Paolo
+                :Parker
+                :Patrick
+                :Paul_Stevens
+                :Paul_the_Wine_Guy
+                :Pete_Becker
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Phoebe_Abbot_Sr.>
+                :Precious
+                :Ralph_Lauren
+                :Randall
+                :Rhonda
+                :Richard_Burke
+                :Richard_Crosby
+                :Rick
+                :Rick_The_Hitchhiker
+                :Rob_Donnen
+                :Roger
+                :Ronni
+                :Russell
+                :Ryan
+                :Sandra_Green
+                :Sandy
+                :Sarah_Ferguson
+                :Sebastian
+                :Sid
+                :Sophie
+                :Stephanie_Schiffer
+                :Stephen_Waltham
+                :Steve
+                :Steven_Fishman
+                :Stu
+                :Susan_Bunch
+                :Susie_Moss
+                :Tag_Jones
+                :Terry
+                :The_Baby_Sniffer
+                :The_Chick
+                :The_Croupier
+                :The_Customer
+                :The_Duck
+                :The_Elderly_Woman
+                :The_Gentleman_On_The_Plane
+                :The_Horrible_Woman
+                :The_Housekeeper
+                :The_Jeweller
+                :The_Judge
+                :The_Nurse
+                :The_Script_Messenger
+                :The_Stripper
+                :The_Teacher
+                :The_Ticket_Agent
+                :The_Triplets
+                :The_Waiter
+                :The_Woman_On_The_Train
+                :The_Zoo_Janitor
+                :The_Zookeeper
+                :Theodore_Hannigan
+                :Tim
+                :Tim_Burke
+                :Tina_Tribbiani
+                :Todd
+                :Tomas
+                :Tommy
+                :Trudie_Styler
+                :Ugly_Naked_Guy
+                :Ursula_Buffay
+                :Verónica_Tribbiani
+                :Vince
+                :Wayne
+                :Wendy
+                :Will_Colbert
+                :Zack
+                <http://www.uoc.edu/roberto/ontologies/friends.owl#Joey's_Doctor>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Chandler_Bing
+                :Joey_Tribbiani
+                :Monica_Geller
+                :Phoebe_Buffay
+                :Rachel_Green
+                :Ross_Geller
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Few_Relationships
+                :Many_Relationships
+                :Moderate_Relationships
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :SeasonEight
+                :SeasonFive
+                :SeasonFour
+                :SeasonNine
+                :SeasonOne
+                :SeasonSeven
+                :SeasonSix
+                :SeasonTen
+                :SeasonThree
+                :SeasonTwo
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Principals ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasNumberOfRelationShips ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 10 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Many_Relationships ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Principals ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasNumberOfRelationShips ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 6 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first <urn:swrl:var#r> ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 10 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Moderate_Relationships ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Principals ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasNumberOfRelationShips ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#r>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#r> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 6 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Few_Relationships ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
